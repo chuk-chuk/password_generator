@@ -18,4 +18,9 @@ class Generator
     options
   end
 
+  def generate_password(length, upper, lower, number, special)
+    raise 'Enter integer' if !length.is_a?(Integer)
+    raise 'Length too short' if length <= 1
+    add_to_options.flatten.sample(length).join
+  end
 end
